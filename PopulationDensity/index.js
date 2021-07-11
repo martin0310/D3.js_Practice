@@ -1,5 +1,6 @@
 import {select, csv,scaleLinear,max,scaleBand,axisLeft,axisBottom,format} from 'd3';
 
+
 const svg = select('svg');
 
 
@@ -25,9 +26,7 @@ const render = data => {
   
   const yAxis = axisLeft(yScale);
   
-  /*const xAxisTickFormat = number => 
-  	format('.3s')(number)
-  		.replace('G','B');*/
+
   
   const xAxis = axisBottom(xScale)
   	.tickSize(-innerHeight);
@@ -48,10 +47,6 @@ const render = data => {
   
   text.style("font-size", "30px");
 
-  /*const text = svg.append('text')
-  	.text('Top 10 Densest City Or Regioin');*/
-  	
-  /*text.style("font-size", "25px");	*/
   
   g.append('g').call(yAxis)
   	.selectAll('.domain, .tick line')
@@ -72,9 +67,7 @@ const render = data => {
   	.attr('fill','black')
   	.text('Density');
   
-  /*g.append('text')
-		.text("hello")
-  	.attr('transform',`translate(0,${innerHeight + 35})`);*/
+  
   
   g.selectAll('rect').data(data)
   	.enter().append('rect')
@@ -94,3 +87,5 @@ csv('data.csv').then(data => {
   
   render(data);
 })
+
+console.log(data.csv);
