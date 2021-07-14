@@ -1,0 +1,24 @@
+body {
+    margin: 0px;
+}
+
+circle{
+	fill: red;
+  opacity: 0.5;
+}
+
+text{
+	font-size: 1.5em;
+}
+
+.tick line{
+	stroke: #C1BAA9;
+}
+
+.tick text, svg text{
+	fill: #978F80; 
+}
+
+.title{
+	fill: black;
+}
